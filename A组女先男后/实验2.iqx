@@ -1,0 +1,566 @@
+﻿************************************************************************
+Editable Parameters: can be easily set by each experimenter
+************************************************************************
+/showsummaryfeedback: set parameter
+showsummaryfeedback = true to display summary feedback to participants at the end
+(default)
+set
+parameter showsummaryfeedback = false if no summary feedback should be presented to
+participants
+/pretrialpause: pause before stimuli
+presentation (default: 250ms)
+/showreminder: true = shows a reminder
+to respond faster if latencies exceeds a predetermined latency
+Note: Karpinsky &amp; Steinman (2006) call using a reminder "largly window dressing"
+but that the response window (in this script: a pseudo response window) might create a
+"sense of urgency" (p.18)
+false =
+does not show reminder to respond more quickly (default in this script)
+/reminderRT: if response latency is
+larger than reminderRT, a reminder is presented to respond faster (if
+values.showreminder = true)
+Note: error responses have to be corrected in this script; this will add ms to their
+response latencies
+/reminderduration: time that the reminder
+to respond more quickly stays on the screen (default: 500ms)
+<values>
+/showsummaryfeedback = true
+/pretrialpause = 250
+/ showreminder = false
+/ reminderRT = 2000
+/ reminderduration = 500
+</values>
+***********************************************************************
+Stimuli: Edit here
+***********************************************************************
+<item attributeAlabel>
+/1 = "自然的"
+</item>
+
+<item attributeA>
+/1 ="动物"
+/2 ="植物"
+/3 ="鸟类"
+/4 ="树木"
+/5 ="海洋"
+/6 ="山峰"
+</item>
+
+<item attributeBlabel>
+/1 = "人造的"
+</item>
+
+<item attributeB>
+/1 ="建筑物"
+/2 ="汽车"
+/3 ="城市"
+/4 ="工厂"
+/5 ="街道"
+/6 ="电脑"
+</item>
+
+<item targetAlabel>
+/1 = "男性"
+</item>
+
+<item targetA>
+/1= "林志建" 
+/2= "王一凯"
+/3= "吴海"
+/4 ="刘晓军"
+/5= "张亮"
+/6 ="陈磊"
+</item>
+***********************************************************************
+To change the categories, you need only change the stimulus items and
+labels immediately above this line. All commands below relate to the
+IAT procedure, and need only be changed if you wish to modify the
+generic IAT procedure.
+***********************************************************************
+***********************************************************************
+Defaults
+***********************************************************************
+<defaults>
+/ fontstyle = ("Arial", 3.5%)
+/ screencolor = (0,0,0)
+/ txbgcolor = (0,0,0)
+/ txcolor = (255, 255, 255)
+/ minimumversion = "4.0.0.0"
+</defaults>
+***********************************************************************
+Scoring
+***********************************************************************
+*********************
+automatically updated
+*********************
+/completed: 0 = script was not completed; 1 =
+script was completed (all conditions run)
+/correct: 1 = correct response; 0 = incorrect
+response
+/ sum1: tracks the sum of the latencies to
+correct responses (and latencies <= 10000ms) for the compatible block
+/ sum2a: tracks the sum of the latencies to
+correct responses (and latencies <= 10000ms) for the incompatible block
+/ n1: counts the number of correct trials in
+compatible block
+/ n2: counts the number of correct trials in
+incompatible block
+/ ss1: tracks the sum of the squared latencies
+to correct responses (and latencies <= 10000ms) in the compatible block
+/ ss2 tracks the sum of the squared latencies
+to correct responses (and latencies <= 10000ms) in the incompatible block
+/ magnitude: stores the magnitude of the implicit
+preference: "little to no", "a slight", "a moderate", "a strong"
+/ n_correct: counts all initial correct responses of all
+trials that count towards D score
+/key_left: left response
+key scancode (default: 18 =>; E)
+/key_left_label: label of left response
+key (here: E)
+/key_right: right response
+key scancode (default: 23 =>; I)
+/key_right_label: label of right response
+key (here: "I")
+<values>
+/completed = 0
+/correct = 0
+/ sum1 = 0
+/ sum2 = 0
+/ n1 = 0
+/ n2 = 0
+/ ss1 = 0
+/ ss2 = 0
+/ magnitude = "unknown"
+/ n_correct = 0
+/key_left = 18
+/key_left_label = "E"
+/key_right = 23
+/key_right_label = "I"
+</values>
+/ m1: mean latencies of correct responses in
+compatible block
+/ m2: mean latencies of correct responses in
+incompatible block
+/ sd1: standard deviation of latencies of correct
+responses in compatible block
+/ sd2: standard deviation of latencies of correct
+responses in incompatible block
+/ sd: standarddeviation of latencies overall
+/ d: overall D-score
+/ latdiff: difference between mean latencies in
+incompatible and compatible block
+/ attitude: positive vs. negative
+/ percentcorrect: calculates the overall percent correct score of initial
+responses of compatible and incompatible trials
+with specified latencies
+<expressions>
+/ m1 = values.sum1 / values.n1
+/ m2 = values.sum2 / values.n2
+/ sd1 = sqrt((values.ss1 - (values.n1 * (expressions.m1 * expressions.m1))) /
+(values.n1 - 1))
+/ sd2 = sqrt((values.ss2 - (values.n2 * (expressions.m2 * expressions.m2))) /
+(values.n2 - 1))
+/ sd = sqrt((((values.n1 - 1) * (expressions.sd1 * expressions.sd1) + (values.n2 - 1) *
+(expressions.sd2 * expressions.sd2)) + ((values.n1 + values.n2) * ((expressions.m1 -
+expressions.m2) * (expressions.m1 - expressions.m2)) / 4) ) / (values.n1 + values.n2 -
+1) )
+/ d = (m2 - m1) / expressions.sd
+/ latdiff = m2 - m1
+/ attitude = "unknown"
+/ percentcorrect = (values.n_correct/ (block.compatibletest.trialcount +
+block.incompatibletest.trialcount)) * 100
+</expressions>
+***********************************************************************
+Data Columns
+***********************************************************************
+date/time/group/subject: built in variables that track date and
+time when script was run with the assigned
+subject- and
+group number
+Note:
+group1/group2 counterbalance the order in which the pairings are run
+blockcode: the name of the current
+trial
+blocknum: the number of the
+current trial
+trialcode: the name of the current
+trial
+trialnum: the number of the
+current trial
+response: the final trial
+response (scancodes of the keys pressed)
+Note:
+script saves the final and -by design- correct response
+correct: the accuracy of the
+initial response
+0 =
+initial response was incorrect and needed to be corrected
+1 =
+initial response is correct
+latency: the latency of the
+final (correct) response
+stimulusnumber: the number of the current
+stimulus
+stimulusitem: the currently presented item
+expressions.d: overall d-score
+/ latdiff: difference between mean
+latencies in incompatible and compatible block
+/percentcorrect: the overall percent correct score of
+initial responses of compatible and incompatible trials
+with qualifying
+latencies
+<data>
+/file = "SC_IAT_rawdata.iqdat"
+/separatefiles = true
+/ columns = [date, time, group, subject, blockcode, blocknum, trialcode, trialnum,
+response, correct, latency, stimulusnumber, stimulusitem,
+expressions.d, expressions.latdiff, expressions.percentcorrect]
+</data>
+*******************
+Summary Data File
+*******************
+script.startdate: date script was run
+script.starttime: time script was started
+script.subjectid: subject id number
+script.groupid: group id number
+script.elapsedtime: time it took to run script (in
+ms)
+/completed: 0 = script was not
+completed; 1 = script was completed (all conditions run)
+/ m1: mean latencies of correct responses in
+compatible block
+/ m2: mean latencies of correct responses in
+incompatible block
+/ sd1: standard deviation of latencies of correct
+responses in compatible block
+/ sd2: standard deviation of latencies of correct
+responses in incompatible block
+/d: overall d-score
+/ latdiff: difference between mean latencies in
+incompatible and compatible block
+/percentcorrect: the overall percent correct score of initial responses of
+compatible and incompatible trials
+with qualifying latencies
+<summarydata >
+/file = "SC_IAT_summary.iqdat"
+/columns = [script.startdate, script.starttime, script.subjectid, script.groupid,
+script.elapsedtime, values.completed,
+expressions.m1, expressions.sd1, expressions.m2,
+expressions.sd2,
+expressions.d, expressions.latdiff, expressions.percentcorrect]
+</summarydata>
+***********************************************************************
+Performance summary
+***********************************************************************
+<trial summary>
+/ stimulustimes = [0=summary]
+/ validresponse = (" ")
+/ recorddata = false
+/ ontrialbegin = [values.magnitude = "little to no"]
+/ ontrialbegin = [if( abs(expressions.d) > 0.15 ) values.magnitude = "a slight"]
+/ ontrialbegin = [if( abs(expressions.d) > 0.35 ) values.magnitude = "a moderate"]
+/ ontrialbegin = [if( abs(expressions.d) >= 0.65 ) values.magnitude = "a strong"]
+/ ontrialbegin = [if(expressions.d >= 0.0) expressions.attitude = "positive"]
+/ ontrialbegin = [if(expressions.d < 0.0) expressions.attitude = "negative"]
+</trial>
+
+<text summary>
+/ items = ("太棒了！~\(≧▽≦)/~n~n你已经完成了该实验任务！~n~n感谢你对本次实验的热情和付出的宝贵时间！")
+/ size = (60%, 60%)
+/ hjustify = left
+</text>
+**********************************************************************
+Task instruction stimuli
+***********************************************************************
+<trial instructions>
+/ stimulustimes = [1=instructions, spacebar]
+/ correctresponse = (" ")
+/ errormessage = false
+/ correctmessage = false
+/ recorddata = false
+</trial>
+
+<text instructions>
+/ items = instructions
+/ hjustify = left
+/ size = (90%, 60%)
+/ position = (50%, 90%)
+/ valign = bottom
+/ select = sequence
+/ resetinterval = 20
+</text>
+
+<item instructions>
+/ 1 = "本实验是一个词汇判断分类任务，您需要将屏幕中央出现的词语分类到左上角或右上角的类别中。~n~n首先，请把您左右手的食指或中指放在键盘的 '<%values.key_left_label%>' 和 '<%values.key_right_label%>' 上。如果屏幕中央的词属于左上角的词语类别时，请按 '<%values.key_left_label%>' 键；如果属于右上角的词语类别时，则按 '<%values.key_right_label%>' 键。每个词只能归入一个类别。~n~n
+如果您出错了， 便会看见一个红色的'X'。请尽可能又快又好地完成任务，太慢或者出现过多错误都会导致实验结果无法解释。~n~n下面将会进入练习任务，请您尽快熟悉实验程序。"
+/ 2 = "请再次对这三类词汇进行分类。~n~n 提醒:请把您左右手的食指或中指放在键盘的 '<%values.key_left_label%>' 和 '<%values.key_right_label%>' 上.如果屏幕中央的词属于左上角的词语类别时，请按 '<%values.key_left_label%>' 键；如果属于右上角的词语类别时，则按 '<%values.key_right_label%>' 键。每个词只能归入一个类别。
+~n~n如果您出错了， 便会看见一个红色的'X'。请尽可能又快又好地完成任务，太慢或者出现过多错误都会导致实验结果无法解释。~n~n下面将会进入正式测验任务。"
+/ 3 = "请您对这三类词汇以新的组合进行重新分类。记住，每个词只能归入一个类别。~n~n任务规则与前面相同：请把您左右手的食指或中指放在键盘的 '<%values.key_left_label%>' 和 '<%values.key_right_label%>' 上。如果屏幕中央的词属于左上角的词语类别时，请按 '<%values.key_left_label%>' 键；如果属于右上角的词语类别时，则按 '<%values.key_right_label%>' 键。
+~n~n如果您出错了， 便会看见一个红色的'X'。请尽可能又快又好地完成任务，太慢或者出现过多错误都会导致实验结果无法解释。~n~n下面将会进入练习任务，请您尽快熟悉实验程序。"
+/ 4 = "请再次对这三类词汇进行分类。~n~n提醒:请把您左右手的食指或中指放在键盘的 '<%values.key_left_label%>' 和 '<%values.key_right_label%>'上.如果屏幕中央的词属于左上角的词语类别时，请按 '<%values.key_left_label%>' 键；如果属于右上角的词语类别时，则按 '<%values.key_right_label%>' 键。每个词只能归入一个类别。
+~n~n如果您出错了，便会看见一个红色的'X'。请尽可能又快又好地完成任务，太慢或者出现过多错误都会导致实验结果无法解释。下面将会进入正式测验任务。"
+</item>
+<text spacebar>
+/ items = ("请按空格键开始")
+/ position = (50%, 95%)
+/ valign = bottom
+</text>
+<text attributeA>
+/ items = attributeA
+/ fontstyle = ("Arial", 5%)
+/ txcolor = (0, 255, 0)
+</text>
+<text attributeB>
+/ items = attributeB
+/ fontstyle = ("Arial", 5%)
+/ txcolor = (0, 255, 0)
+</text>
+<text targetA>
+/ items = targetA
+/ fontstyle = ("Arial", 5%)
+</text>
+<text error>
+/ position = (50%, 75%)
+/ items = ("X")
+/ color = (255, 0, 0)
+/ fontstyle = ("Arial", 10%, true)
+</text>
+<text correctmessage>
+/ position = (50%, 75%)
+/ items = ("O")
+/ color = (0, 255, 0)
+/ fontstyle = ("Arial", 10%, true)
+</text>
+<text attributeAleft>
+/ items = attributeAlabel
+/ valign = top
+/ halign = left
+/ position = (5%, 5%)
+/ txcolor = (0, 255, 0)
+/ fontstyle = ("Arial", 5%)
+</text>
+<text attributeBright>
+/ items = attributeBlabel
+/ valign = top
+/ halign = right
+/ position = (95%, 5%)
+/ txcolor = (0, 255, 0)
+/ fontstyle = ("Arial", 5%)
+</text>
+<text targetAleftmixed>
+/ items = targetAlabel
+/ valign = top
+/ halign = left
+/ position = (5%, 19%)
+/ fontstyle = ("Arial", 5%)
+</text>
+<text targetArightmixed>
+/ items = targetAlabel
+/ valign = top
+/ halign = right
+/ position = (95%, 19%)
+/ fontstyle = ("Arial", 5%)
+</text>
+<text targetAleft>
+/ items = targetAlabel
+/ valign = top
+/ halign = left
+/ position = (5%, 5%)
+/ fontstyle = ("Arial", 5%)
+</text>
+<text targetAright>
+/ items = targetAlabel
+/ valign = top
+/ halign = right
+/ position = (95%, 5%)
+/ fontstyle = ("Arial", 5%)
+</text>
+<text orleft>
+/ items = ("or")
+/ valign = top
+/ halign = left
+/ position = (5%, 12%)
+/ fontstyle = ("Arial", 5%)
+</text>
+<text orright>
+/ items = ("or")
+/ valign = top
+/ halign = right
+/ position = (95%, 12%)
+/ fontstyle = ("Arial", 5%)
+</text>
+<text reminder>
+/items = ("请您再快一些")
+/txcolor = yellow
+/ fontstyle = ("Arial", 5%, false, false, false, false, 5, 1)
+</text>
+***********************************************************************
+Trials
+***********************************************************************
+<trial attributeA>
+/pretrialpause = values.pretrialpause
+/stimulusframes = [1 = attributeA]
+/validresponse = (18, 23)
+/correctresponse = (18)
+/responsemessage = (23,error,150)
+/correctmessage = true(correctmessage,150)
+/ontrialend = [if (trial.attributea.correct) values.correct = 1 else values.correct =
+0]
+/branch = [if (values.showreminder == true && trial.attributea.latency >=
+values.reminderrt) trial.reminder]
+</trial>
+<trial attributeB>
+/pretrialpause = values.pretrialpause
+/stimulusframes = [1 = attributeB]
+/validresponse = (18, 23)
+/correctresponse = (23)
+/responsemessage = (18,error,150)
+/correctmessage = true(correctmessage,150)
+/ontrialend = [if (trial.attributeb.correct) values.correct = 1 else values.correct =
+0]
+/branch = [if (values.showreminder == true && trial.attributeB.latency>=
+values.reminderrt) trial.reminder]
+</trial>
+<trial targetAleft>
+/pretrialpause = values.pretrialpause
+/stimulusframes = [1 = targetA]
+/validresponse = (18, 23)
+/correctresponse = (18)
+/responsemessage = (23,error,150)
+/correctmessage = true(correctmessage,150)
+/ontrialend = [if (trial.targetAleft.correct) values.correct = 1 else values.correct =
+0]
+/branch = [if (values.showreminder == true && trial.targetAleft.latency >=
+values.reminderrt) trial.reminder]
+</trial>
+<trial targetAright>
+/pretrialpause = values.pretrialpause
+/stimulusframes = [1 = targetA]
+/validresponse = (18, 23)
+/correctresponse = (23)
+/responsemessage = (18,error,150)
+/correctmessage = true(correctmessage,150)
+/ontrialend = [if (trial.targetAright.correct) values.correct = 1 else values.correct =
+0]
+/branch = [if (values.showreminder == true && trial.targetAright.latency >=
+values.reminderrt) trial.reminder]
+</trial>
+<trial reminder>
+/stimulusframes = [1 = reminder]
+/timeout = values.reminderduration
+/correctresponse = (noresponse)
+/recorddata = false
+</trial>;
+***********************************************************************
+Blocks
+***********************************************************************
+Note: presents the trials in a 7:7:10 ratio =>; 14 (good + target) on
+responsekey_left and 10 (bad) on responsekey_right
+<block practice_compatibletest>
+/ bgstim = (attributeAleft, orleft, targetAleftmixed, attributeBright)
+/ trials = [1=instructions;
+2-25 = noreplace(targetAleft, targetAleft, targetAleft, targetAleft, targetAleft,
+targetAleft, targetAleft,
+attributeA, attributeA, attributeA, attributeA,
+attributeA, attributeA, attributeA,
+attributeB, attributeB, attributeB, attributeB,
+attributeB, attributeB, attributeB, attributeB, attributeB, attributeB)]
+/ responsemode = correct
+</block>
+Note: presents the trials in a 7:7:10 ratio =>; 14 (good + target) on
+responsekey_left and 10 (bad) on responsekey_right
+<block compatibletest>
+/ bgstim = (attributeAleft, orleft, targetAleftmixed, attributeBright)
+/ trials = [1-72 =noreplace(targetAleft, targetAleft, targetAleft, targetAleft,
+targetAleft, targetAleft, targetAleft,
+attributeA, attributeA, attributeA, attributeA,
+attributeA, attributeA, attributeA,
+attributeB, attributeB, attributeB, attributeB,
+attributeB, attributeB, attributeB, attributeB, attributeB, attributeB)]
+/ ontrialend = [if(block.compatibletest.latency <= 10000) values.sum1 =
+values.sum1 + block.compatibletest.latency]
+/ ontrialend = [if(block.compatibletest.latency <= 10000) values.n1 = values.n1 +
+1]
+/ ontrialend = [if(block.compatibletest.latency <= 10000) values.ss1 = values.ss1
++ (block.compatibletest.latency * block.compatibletest.latency)]
+/ ontrialend = [if(block.compatibletest.latency <= 10000) values.n_correct +=
+block.compatibletest.correct]
+/ responsemode = correct
+</block>
+Note: presents the trials in a 7:7:10 ratio =>; 10 (good) on responsekey_left and 14
+(bad + target) on responsekey_right
+<block practice_incompatibletest>
+/ bgstim = (attributeAleft, targetARightMixed, orright, attributeBright)
+/ trials = [1=instructions; 2-25 = noreplace(targetAright, targetAright, targetAright,
+targetAright, targetAright, targetAright, targetAright,
+attributeA, attributeA, attributeA, attributeA,
+attributeA, attributeA, attributeA, attributeA, attributeA, attributeA,
+attributeB, attributeB, attributeB, attributeB,
+attributeB, attributeB, attributeB)]
+/ responsemode = correct
+</block>
+Note: presents the trials in a 7:7:10 ratio =>; 10 (good) on responsekey_left and 14
+(bad + target) on responsekey_right
+<block incompatibletest>
+/ bgstim = (attributeAleft, targetARightMixed, orright, attributeBright)
+/ trials = [1-72 = noreplace(targetAright, targetAright, targetAright, targetAright,
+targetAright, targetAright, targetAright,
+attributeA, attributeA, attributeA, attributeA,
+attributeA, attributeA, attributeA, attributeA, attributeA, attributeA,
+attributeB, attributeB, attributeB, attributeB,
+attributeB, attributeB, attributeB)]
+/ ontrialend = [if(block.incompatibletest.latency <= 10000) values.sum2 =
+values.sum2 + block.incompatibletest.latency]
+/ ontrialend = [if(block.incompatibletest.latency <= 10000) values.n2 = values.n2
++ 1]
+/ ontrialend = [if(block.incompatibletest.latency <= 10000) values.ss2 =
+values.ss2 + (block.incompatibletest.latency * block.incompatibletest.latency)]
+/ ontrialend = [if(block.incompatibletest.latency <= 10000) values.n_correct +=
+block.incompatibletest.correct]
+/ responsemode = correct
+</block>
+<block compatibletestinstructions>
+/ bgstim = (attributeAleft, orleft, targetAleftmixed, attributeBright)
+/ trials = [1=instructions]
+/ recorddata = false
+</block>;
+<block incompatibletestinstructions>
+/ bgstim = (attributeAleft, attributeBright, orright, targetArightmixed)
+/ trials = [1=instructions]
+/ recorddata = false
+</block>
+<block summary>
+/skip = [values.showsummaryfeedback == false]
+/ trials = [1=summary]
+/ recorddata = false
+</block>
+***********************************************************************
+Experiment
+***********************************************************************
+<expt>
+/subjects = (1 of 2)
+/groupassignment = groupnumber
+/ blocks = [1=practice_compatibletest; 2=compatibletestinstructions; 3=compatibletest;
+4=practice_incompatibletest; 5=incompatibletestinstructions; 6=incompatibletest;
+7=summary]
+/onexptend = [values.completed = 1]
+</expt>
+<expt>
+/subjects = (2 of 2)
+/groupassignment = groupnumber
+/ blocks = [1=practice_incompatibletest; 2=incompatibletestinstructions;
+3=incompatibletest;
+4=practice_compatibletest; 5=compatibletestinstructions; 6=compatibletest; 7=summary]
+/onexptend = [values.completed = 1]
+</expt>
+***********************************************************************
+Test Monkey
+***********************************************************************
+<monkey>
+/ latencydistribution = normal(500, 100)
+/ percentcorrect = 90
+</monkey>
+***********************************************************************
+End of File
+***********************************************************************
+</pre></body></html>
