@@ -1,0 +1,4 @@
+date	time	group	subject	blockcode	blocknum	trialcode	trialnum	response	correct	latency	stimulusnumber1	stimulusitem1	expressions.d	expressions.latdiff	expressions.percentcorrect
+101418	14:26:57	1	1	practice_compatibletest	1	attributeA	2	18	0	5432	6	山峰		0	0
+101418	14:26:57	1	1	practice_compatibletest	1	attributeA	3	18	0	249	1	动物		0	0
+101418	14:26:57	1	1	practice_compatibletest	1	attributeB	4	23	0	22	4	工厂		0	0

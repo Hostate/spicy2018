@@ -1,0 +1,19 @@
+16.9985 	DATA 	Keypress: lshift
+17.3148 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([-1., -1., -1.]), colorSpace='rgb', fullscr=UNKNOWN, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0F4EB9F0>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1360,  768]), stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+17.3148 	EXP 	window1: recordFrameIntervals = False
+17.4815 	EXP 	window1: recordFrameIntervals = True
+17.6654 	EXP 	window1: recordFrameIntervals = False
+17.9368 	EXP 	Created text_wel = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Consonlas', fontFiles=[], height=0.07, italic=False, name='text_wel', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1)
+17.9482 	EXP 	Created beauty_left = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Consonlas', fontFiles=[], height=0.07, italic=False, name='beauty_left', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([255., 255., 255.]), text='美丽女性', units='norm', win=Window(...), wrapWidth=1)
+17.9566 	EXP 	Created ugly_right = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Consonlas', fontFiles=[], height=0.07, italic=False, name='ugly_right', opacity=1.0, ori=0, pos=array([0.8, 0.8]), rgb=array([255., 255., 255.]), text='普通女性', units='norm', win=Window(...), wrapWidth=1)
+17.9740 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Consolas', fontFiles=[], height=0.06, italic=False, name='text', opacity=1.0, ori=0, pos=array([-0.85,  0.6 ]), rgb=array([255., 255., 255.]), text='OR\n\n辣味', units='norm', win=Window(...), wrapWidth=1)
+17.9943 	EXP 	Created image_1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='photo\\\\beauty\\\\mn.png', interpolate=True, mask=None, maskParams=None, name='image_1', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.7, 1.1]), texRes=128, units='norm', win=Window(...))
+18.0160 	EXP 	text_wel: autoDraw = True
+18.6864 	DATA 	Keypress: space
+18.7022 	EXP 	text_wel: autoDraw = False
+18.7022 	EXP 	beauty_left: autoDraw = True
+18.7022 	EXP 	ugly_right: autoDraw = True
+18.7022 	EXP 	text: autoDraw = True
+18.7022 	EXP 	image_1: autoDraw = True
+31.4604 	DATA 	Keypress: escape
+31.5701 	EXP 	window1: mouseVisible = True

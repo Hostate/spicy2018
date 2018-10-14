@@ -1,0 +1,2 @@
+script.startdate	script.starttime	script.subjectid	script.groupid	script.elapsedtime	values.completed	expressions.m1	expressions.sd1	expressions.m2	expressions.sd2	expressions.d	expressions.latdiff	expressions.percentcorrect
+101418	14:16:31	1	1	496302	1	1008.0277777777778283053	779.0104046064678868788	197.7777777777777714618	47.325133191697354107	-1.1847827689498053871	-810.25	65.9722222222222143273

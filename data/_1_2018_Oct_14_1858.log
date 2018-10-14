@@ -1,0 +1,26 @@
+14.3677 	DATA 	Mouse: wheel shift=(0,-1), pos=(1036,359)
+14.4515 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([-1., -1., -1.]), colorSpace='rgb', fullscr=UNKNOWN, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0E07BA70>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1360,  768]), stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+14.4516 	EXP 	window1: recordFrameIntervals = False
+14.6181 	EXP 	window1: recordFrameIntervals = True
+14.8034 	EXP 	window1: recordFrameIntervals = False
+15.0712 	EXP 	Created text_wel = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Consonlas', fontFiles=[], height=0.07, italic=False, name='text_wel', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1)
+15.0821 	EXP 	Created beauty_left = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Consonlas', fontFiles=[], height=0.07, italic=False, name='beauty_left', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([255., 255., 255.]), text='美丽女性', units='norm', win=Window(...), wrapWidth=1)
+15.0902 	EXP 	Created ugly_right = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Consonlas', fontFiles=[], height=0.07, italic=False, name='ugly_right', opacity=1.0, ori=0, pos=array([0.8, 0.8]), rgb=array([255., 255., 255.]), text='普通女性', units='norm', win=Window(...), wrapWidth=1)
+15.1073 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Consolas', fontFiles=[], height=0.06, italic=False, name='text', opacity=1.0, ori=0, pos=array([-0.85,  0.6 ]), rgb=array([255., 255., 255.]), text='OR\n\n辣味', units='norm', win=Window(...), wrapWidth=1)
+15.1279 	EXP 	Created image_1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='photo\\\\beauty\\\\mn.png', interpolate=True, mask=None, maskParams=None, name='image_1', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.7, 1.1]), texRes=128, units='norm', win=Window(...))
+15.1363 	EXP 	Created cross = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, autoDraw=False, autoLog=True, closeShape=True, contrast=1.0, depth=-4.0, fillColor=array([ 1., -1., -1.]), fillColorSpace='rgb', interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineWidth=0.2, name='cross', opacity=1.0, ori=array(45.), pos=array([ 0. , -0.8]), size=array([0.3, 0.3]), units='norm', vertices=ndarray(...), win=Window(...), windingRule=None)
+15.1533 	EXP 	text_wel: autoDraw = True
+15.6261 	DATA 	Keypress: lshift
+20.1425 	DATA 	Keypress: space
+20.1435 	DATA 	Keypress: space
+24.4578 	EXP 	text_wel: autoDraw = False
+24.4578 	EXP 	beauty_left: autoDraw = True
+24.4578 	EXP 	ugly_right: autoDraw = True
+24.4578 	EXP 	text: autoDraw = True
+24.4578 	EXP 	image_1: autoDraw = True
+24.4578 	EXP 	cross: autoDraw = True
+24.4591 	DATA 	Mouse: Left button down, pos=(502,399)
+24.4595 	DATA 	Mouse:  Left button up, pos=(502,399)
+24.4599 	DATA 	Keypress: space
+28.0570 	DATA 	Keypress: escape
+28.1387 	EXP 	window1: mouseVisible = True

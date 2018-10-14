@@ -1,0 +1,15 @@
+8.1859 	WARNING 	User requested fullscreen with size [1024  768], but screen is actually [1360, 768]. Using actual size
+39.7778 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=UNKNOWN, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0E9AB8F0>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1360,  768]), stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+39.7778 	EXP 	window1: recordFrameIntervals = False
+39.9442 	EXP 	window1: recordFrameIntervals = True
+40.1283 	EXP 	window1: recordFrameIntervals = False
+40.4548 	EXP 	Created text_wel = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Consonlas', fontFiles=[], height=0.07, italic=False, name='text_wel', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1)
+40.4682 	EXP 	Created beauty_left = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Consonlas', fontFiles=[], height=0.07, italic=False, name='beauty_left', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([255., 255., 255.]), text='美丽女性', units='norm', win=Window(...), wrapWidth=1)
+40.4782 	EXP 	Created ugly_right = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Consonlas', fontFiles=[], height=0.07, italic=False, name='ugly_right', opacity=1.0, ori=0, pos=array([0.8, 0.8]), rgb=array([255., 255., 255.]), text='普通女性', units='norm', win=Window(...), wrapWidth=1)
+40.4942 	EXP 	text_wel: autoDraw = True
+43.1460 	DATA 	Keypress: space
+43.1603 	EXP 	text_wel: autoDraw = False
+43.1603 	EXP 	beauty_left: autoDraw = True
+43.1603 	EXP 	ugly_right: autoDraw = True
+44.9865 	DATA 	Keypress: escape
+45.1001 	EXP 	window1: mouseVisible = True

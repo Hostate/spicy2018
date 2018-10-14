@@ -1,0 +1,23 @@
+14.4663 	DATA 	Keypress: lshift
+14.9099 	WARNING 	Couldn't measure a consistent frame rate.
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+14.9105 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=UNKNOWN, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0EA3B8F0>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1360,  768]), stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+14.9105 	EXP 	window1: recordFrameIntervals = False
+15.1720 	EXP 	window1: recordFrameIntervals = True
+15.2352 	WARNING 	t of last frame was 30.72ms (=1/32)
+15.2815 	WARNING 	t of last frame was 29.92ms (=1/33)
+15.3127 	WARNING 	t of last frame was 31.14ms (=1/32)
+15.3432 	WARNING 	t of last frame was 30.51ms (=1/32)
+15.3888 	WARNING 	Multiple dropped frames have occurred - I'll stop bothering you about them!
+16.3509 	EXP 	window1: recordFrameIntervals = True
+16.4439 	EXP 	Created beauty_left = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Consolas', fontFiles=[], height=0.07, italic=False, name='beauty_left', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([255., 255., 255.]), text='美丽女性', units='norm', win=Window(...), wrapWidth=1)
+16.4547 	EXP 	Created ugly_right = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Consolas', fontFiles=[], height=0.07, italic=False, name='ugly_right', opacity=1.0, ori=0, pos=array([0.8, 0.8]), rgb=array([255., 255., 255.]), text='普通女性', units='norm', win=Window(...), wrapWidth=1)
+16.6417 	EXP 	Created text_wel = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Consonlas', fontFiles=[], height=0.07, italic=False, name='text_wel', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1)
+16.6462 	EXP 	Created beauty_left = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Consolas', fontFiles=[], height=0.07, italic=False, name='beauty_left', opacity=1.0, ori=0, pos=array([-0.8,  0.8]), rgb=array([255., 255., 255.]), text='美丽女性', units='norm', win=Window(...), wrapWidth=1)
+16.6503 	EXP 	Created ugly_right = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Consolas', fontFiles=[], height=0.07, italic=False, name='ugly_right', opacity=1.0, ori=0, pos=array([0.8, 0.8]), rgb=array([255., 255., 255.]), text='普通女性', units='norm', win=Window(...), wrapWidth=1)
+16.6803 	EXP 	beauty_left: autoDraw = True
+16.6803 	EXP 	ugly_right: autoDraw = True
+30.7503 	DATA 	Keypress: escape
+30.8327 	EXP 	window1: mouseVisible = True
